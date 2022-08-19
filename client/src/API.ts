@@ -2,14 +2,12 @@ import axios, { AxiosResponse } from 'axios'
 
 const baseUrl: string = 'http://localhost:4000'
 
-export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
+export const getTodos = async(): Promise<AxiosResponse<ApiDataType>> => {
   try {
-    const todos: AxiosResponse<ApiDataType> = await axios.get(
-      baseUrl + '/todos'
-    )
-    return todos
-  } catch (error) {
-    throw error
+    const todos = await axios.get(baseUrl + '/todos');
+    return todos;
+  } catch(err){
+    throw err;
   }
 }
 
