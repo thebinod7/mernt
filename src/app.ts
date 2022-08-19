@@ -11,6 +11,7 @@ const MONGO_URI: string = config.get("app.db_url");
 const MONGO_OPTIONS: object = { useNewUrlParser: true, useUnifiedTopology: true };
 
 app.use(cors())
+app.use(express.json())
 app.use(todoRoutes)
 
 mongoose
